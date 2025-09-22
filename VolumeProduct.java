@@ -3,21 +3,21 @@ public class VolumeProduct extends Product {
 
     private final int voumeArticleVendu;
 
-    public VolumeProduct(String nom , int prix, flaot vat, int voumeArticleVendu ){
-        super(nom,prix, vat)
+    public VolumeProduct(String nom , int prix, float vat, int voumeArticleVendu ){
+        super(nom,prix, vat);
         this.voumeArticleVendu = voumeArticleVendu;
     }
 
     @Override
 
     public int getPriceExcludingVAT (){
-        return price*voumeArticleVendu;
+        return super.getPriceExcludingVAT()*voumeArticleVendu;
     }
 
 
     @Override
     public float getVATAmount (){
-        return getPriceExcludingVAT()*(VAT/100.0f);
+        return getPriceExcludingVAT()*(super.getVAT()/100.0f);
     }
 
     @Override

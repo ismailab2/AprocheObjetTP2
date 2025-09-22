@@ -1,23 +1,23 @@
 
-public class VolumeProduct extends Product {
+public class WeightProduct extends Product {
 
     private final int poidArticleVendu;
 
-    public VolumeProduct(String nom , int prix, flaot vat, int poidArticleVendu ){
-        super(nom,prix, vat)
+    public WeightProduct(String nom , int prix, float vat, int poidArticleVendu ){
+        super(nom,prix, vat);
         this.poidArticleVendu = poidArticleVendu;
     }
 
     @Override
 
     public int getPriceExcludingVAT (){
-        return price*poidArticleVendu;
+        return super.getPriceExcludingVAT()*poidArticleVendu;
     }
 
 
     @Override
     public float getVATAmount (){
-        return getPriceExcludingVAT()*(VAT/100.0f);
+        return getPriceExcludingVAT()*(super.getVAT()/100.0f);
     }
 
     @Override
