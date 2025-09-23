@@ -1,0 +1,6 @@
+
+# Fichiers compilés Java
+*.class
+
+# VS Code
+.vscode/
