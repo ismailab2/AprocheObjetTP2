@@ -6,6 +6,8 @@ public class Main {
 
     static public void main (String [] args ){
 
+        /* 
+
         Set <Product> products = new HashSet<Product>();
         
         Product product = new Product("Ananas", 100, 10);
@@ -25,6 +27,21 @@ public class Main {
 
         Product RestaurantService = new RestaurantService("pomme", 100);
         System.out.println(RestaurantService);
+
+
+        */
+
+        Catalog c1 = Catalog.getInstance();
+        Catalog c2 = Catalog.getInstance();
+
+        System.out.println(c1 == c2); // true → Singleton
+
+        c1.addProduct("Pomme", 10);
+        c1.addProduct("Banane", 5);
+
+        c2.removeProduct("Pomme", 3);
+
+        c1.showCatalog();
 
 
     }
