@@ -26,17 +26,17 @@ public class Catalog {
     }
 
     // Ajouter un produit
-    public void addProduct(String name, int quantité) {
-        products.put(name, products.getOrDefault(name, 0) + quantité);
+    public void addProduct(String name, int quantite) {
+        products.put(name, products.getOrDefault(name, 0) + quantite);
     }
 
 
     //retirer un produit
-    public void removeProduct (String name, int quantité){
+    public void removeProduct (String name, int quantite){
         if(products.containsKey(name)){
-            int newquantité = products.get(name) - quantité;
+            int newquantité = products.get(name) - quantite;
             if (newquantité > 0){
-                addProduct(name, newquantité);
+                products.put(name, newquantité);
             }
             else{
                 products.remove(name);
