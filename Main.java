@@ -1,14 +1,21 @@
 
+import java.util.Set;
+import java.util.HashSet;
 
 public class Main {
 
     static public void main (String [] args ){
+
+        Set <Product> products = new HashSet<Product>();
         
         Product product = new Product("Ananas", 100, 10);
-        System.out.println(product);
 
+        Product product0 = new Product("mangue", 50, 10);
         Product product1 = new Product("Ananas", 100, 10);
-        System.out.println(product1);
+        products.add(product);
+        products.add(product1);
+        products.add(product0);
+        System.out.println(products);
 
         Product VolumeProduct = new VolumeProduct("mangue", 100, 10,2);
         System.out.println(VolumeProduct);
